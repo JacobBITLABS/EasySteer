@@ -7,8 +7,9 @@ import re
 import time
 
 # Import vllm related modules (using pip-installed vllm)
-from vllm import SamplingParams
+# IMPORTANT: SteerVectorRequest must be imported BEFORE SamplingParams to avoid segfault
 from vllm.steer_vectors.request import SteerVectorRequest
+from vllm import SamplingParams
 
 # Import core modules for unified management
 from core import (

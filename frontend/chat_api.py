@@ -11,8 +11,9 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Import vllm related modules
-from vllm import SamplingParams
+# IMPORTANT: SteerVectorRequest must be imported BEFORE SamplingParams to avoid segfault
 from vllm.steer_vectors.request import SteerVectorRequest
+from vllm import SamplingParams
 
 # Import core modules for unified management
 from core import (
